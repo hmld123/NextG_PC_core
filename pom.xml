@@ -1,0 +1,83 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.github.hmld.desptop</groupId>
+	<artifactId>NextG_PC_core</artifactId>
+	<version>${project.version}</version>
+	
+	<packaging>pom</packaging>
+	
+	<properties>
+		<project.version>0.0.1</project.version>
+		<!-- java版本 -->
+		<java.version>11.0.8</java.version>
+		<!-- 编码 -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- 指定编译使得jdk版本 -->
+		<maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+		<!-- javafx版本 -->
+		<javafxVersion>11</javafxVersion>
+		<!-- jackson版本 -->
+		<jacksonVersion>2.12.4</jacksonVersion>
+		<!-- commons-lang3版本 -->
+		<commonsLang3Version>3.11</commonsLang3Version>
+		<!-- commons-io版本 -->
+		<commonsIoVersion>2.11.0</commonsIoVersion>
+		<!-- commons-codec 版本 -->
+		<commonsCodecVersion>1.15</commonsCodecVersion>
+		<!-- log4j 版本 -->
+		<log4jVersion>2.14.1</log4jVersion>
+		<!-- mybatis 版本 -->
+		<mybatisVersion>3.5.7</mybatisVersion>
+		<!-- sqlite-jdbc 版本 -->
+		<sqliteJdbcVersion>3.34.0</sqliteJdbcVersion>
+	</properties>
+	
+	<modules>
+		<module>nextg-common</module>
+		<module>nextg-application</module>
+	</modules>
+	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+	  		<groupId>com.github.hmld.desptop</groupId>
+	    	<artifactId>nextg-common</artifactId>
+	    	<version>${project.version}</version>
+	  	</dependency>
+	  	<dependency>
+	  		<groupId>com.github.hmld.desptop</groupId>
+	    	<artifactId>nextg-application</artifactId>
+	    	<version>${project.version}</version>
+	  	</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
+		<!-- maven仓库设置 -->
+	<repositories>
+		<repository>
+			<id>public</id>
+			<name>aliyun nexus</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>public</id>
+			<name>aliyun nexus</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+</project>

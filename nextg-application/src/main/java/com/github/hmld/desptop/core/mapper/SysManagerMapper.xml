@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.hmld.core.mapper.SysManagerMapper">
+  <!-- 用户表 -->
+  <resultMap type="com.github.hmld.core.enity.SysManagerEnity" id="sysManagerResult">
+    <!-- 主键 -->
+    <id property="managerUserPk" column="manager_user_pk"/>
+    <!-- 所属用户名 -->
+    <result property="managerUserName" column="manager_user_name"/>
+    <!-- 所属用户昵称 -->
+    <result property="managerNickName" column="manager_nick_name"/>
+    <!-- 注册密码 -->
+    <result property="managerPassword" column="manager_password"/>
+    <!-- 盐 -->
+    <result property="salt" column="salt"/>
+    <!-- 删除状态 -->
+    <result property="delFlg" column="del_flg"/>
+    <!-- 创建人 -->
+    <result property="creatBy" column="creat_by"/>
+    <!-- 创建时间 -->
+    <result property="creatTime" column="creat_time"/>
+    <!-- 更新人 -->
+    <result property="updateBy" column="update_by"/>
+    <!-- 更新时间 -->
+    <result property="updateTime" column="update_time"/>
+  </resultMap>
+  <!-- 查询sql -->
+  <sql id="sysManagerVo">SELECT sm.manager_user_pk,sm.manager_nick_name ,sm.manager_password ,sm.salt ,sm.del_flg ,sm.creat_by ,sm.creat_time ,sm.update_by ,sm.update_time ,sm.manager_user_name FROM sys_manager sm </sql>
+  <!-- 查询所有 -->
+  <select id="queryList" parameterType="com.github.hmld.core.enity.SysManagerEnity" resultMap="sysManagerResult">
+    <include refid="sysManagerVo" />
+    <where>
+      sm.del_flg = 0
+      <if test="managerUserName != null and managerUserName != ''">
+        and sm.manager_user_name = #{managerUserName}
+      </if>
+      <if test="managerNickName != null and managerNickName != ''">
+        and sm.manager_nick_name like concat('%', #{managerNickName}, '%') 
+      </if>
+    </where>
+  </select>
+  <!-- 查询一条 -->
+  <select id="queryOneByUserName" parameterType="string" resultMap="sysManagerResult">
+    <include refid="sysManagerVo" />
+    where sm.manager_user_name = #{managerUserPk}
+  </select>
+  <!-- 通过用户名 查询一条 -->
+  <select id="queryOne" parameterType="string" resultMap="sysManagerResult">
+    <include refid="sysManagerVo" />
+    where sm.manager_user_pk = #{managerUserName}
+  </select>
+  <!-- 添加一条 -->
+  <insert id="addOne" parameterType="com.github.hmld.core.enity.SysManagerEnity" >
+    insert into sys_manager (
+      manager_user_pk,
+      manager_user_name,
+      manager_nick_name,
+      manager_password,
+      salt,
+      del_flg,
+      <if test="updateBy != null and updateBy != ''">update_by,</if>
+      <if test="updateTime != null">update_time,</if>
+      creat_by,
+      creat_time
+    )
+    values(
+      #{managerUserPk},
+      #{managerUserName},
+      #{managerNickName},
+      #{managerPassword},
+      #{salt},
+      #{delFlg},
+      <if test="updateBy != null and updateBy != ''">#{updateBy},</if>
+      <if test="updateTime != null">#{updateTime},</if>
+      #{creatBy},
+      #{creatTime}
+    )
+  </insert>
+  <!-- 更新一条 -->
+  <update id="updateOne" parameterType="com.github.hmld.core.enity.SysManagerEnity">
+    update sys_manager
+    <set>
+      <if test="managerNickName != null and managerNickName != ''">manager_nick_name = #{managerNickName},</if>
+      <if test="managerPassword != null and managerPassword != ''">manager_password = #{managerPassword},</if>
+      <if test="salt != null and salt != ''">salt = #{salt},</if>
+      <if test="delFlg != null and delFlg != ''">del_flg = #{delFlg},</if>
+      <if test="updateBy != null and updateBy != ''">update_by = #{updateBy},</if>
+      update_time = #{updateTime}
+    </set>
+    where manager_user_pk = #{managerUserPk}
+  </update>
+  <!-- 删除一条 -->
+  <delete id="delOne" parameterType="com.github.hmld.core.enity.SysManagerEnity">
+    update sys_manager
+    <set>
+      del_flg = 1,
+      update_by = #{updateBy},
+      update_time = #{updateTime}
+    </set>
+    where manager_user_pk = #{managerUserPk}
+  </delete>
+</mapper>
