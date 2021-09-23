@@ -37,12 +37,18 @@
 	</properties>
 	
 	<modules>
+		<module>nextg-framework</module>
 		<module>nextg-common</module>
 		<module>nextg-application</module>
 	</modules>
 	
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+	  		<groupId>com.github.hmld.desptop</groupId>
+	    	<artifactId>nextg-framework</artifactId>
+	    	<version>${project.version}</version>
+	  	</dependency>
 			<dependency>
 	  		<groupId>com.github.hmld.desptop</groupId>
 	    	<artifactId>nextg-common</artifactId>

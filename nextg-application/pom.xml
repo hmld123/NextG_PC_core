@@ -9,7 +9,7 @@
   <dependencies>
   	<dependency>
   		<groupId>com.github.hmld.desptop</groupId>
-    	<artifactId>nextg-common</artifactId>
+    	<artifactId>nextg-framework</artifactId>
   	</dependency>
   </dependencies>
   
