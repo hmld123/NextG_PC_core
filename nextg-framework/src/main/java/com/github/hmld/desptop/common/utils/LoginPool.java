@@ -7,7 +7,6 @@ import com.github.hmld.common.utils.SqliteJDBCUtil;
 import com.github.hmld.common.utils.StringUtils;
 import com.github.hmld.desptop.core.enity.SysManagerEnity;
 import com.github.hmld.desptop.core.mapper.SysManagerMapper;
-import com.github.hmld.desptop.view.passwordmanager.controller.AddViewController;
 
 /**
  * 登录池 支支持一个账户
@@ -21,7 +20,7 @@ public class LoginPool {
 	public static SysManagerEnity getLoginUser(final Class<?> clazz){
   		SqlSession session = SqliteJDBCUtil.getCurrentSqlSession();
     	SysManagerMapper mapper = session.getMapper(SysManagerMapper.class);
-    	SysManagerEnity manager = mapper.queryOne(LoginPool.getLogin(AddViewController.class));
+    	SysManagerEnity manager = mapper.queryOne(LoginPool.getLogin(LoginPool.class));
     	LoggerUtil.infoMsgI18n(clazz, "system.log.info","获取登录用户");
     	return manager;
 	}

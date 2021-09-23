@@ -36,8 +36,8 @@ public class LoginController {
     String userName = this.fieldLoginUsername.getText();
     String password = this.fieldLoginPassword.getText();
     if (sysManagerService.loginUser(userName, password)) {
-    	Stage oldStage = (Stage)((Node)e.getSource()).getScene().getWindow();
-    	ViewUtil.goToStage(getClass(), oldStage, "view/passwordmanager/pm.fxml");
+//    	Stage oldStage = (Stage)((Node)e.getSource()).getScene().getWindow();
+//    	ViewUtil.goToStage(getClass(), oldStage, "view/passwordmanager/pm.fxml");
 		}
   }
 

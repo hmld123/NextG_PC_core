@@ -1,4 +1,4 @@
-package com.github.hmld.desptop.pwm.enigine;
+package com.github.hmld.common.pwm.enigine;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -6,8 +6,8 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
-import com.github.hmld.desptop.pwm.enigine.bastdata.Materials;
-import com.github.hmld.desptop.pwm.enigine.config.PassWordSetting;
+import com.github.hmld.common.pwm.enigine.bastdata.Materials;
+import com.github.hmld.common.pwm.enigine.config.PassWordSetting;
 /**
  * 密码生成引擎
  * @author hmld

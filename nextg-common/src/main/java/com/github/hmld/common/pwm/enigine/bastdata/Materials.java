@@ -1,4 +1,4 @@
-package com.github.hmld.desptop.pwm.enigine.bastdata;
+package com.github.hmld.common.pwm.enigine.bastdata;
 
 import java.io.BufferedReader;
 import java.io.InputStream;

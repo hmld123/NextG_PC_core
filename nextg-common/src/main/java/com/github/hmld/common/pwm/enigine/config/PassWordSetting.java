@@ -1,4 +1,4 @@
-package com.github.hmld.desptop.pwm.enigine.config;
+package com.github.hmld.common.pwm.enigine.config;
 /**
  * 密码设置
  * @author hmld
