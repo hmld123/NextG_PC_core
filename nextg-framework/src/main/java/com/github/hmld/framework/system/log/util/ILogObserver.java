@@ -5,5 +5,9 @@ package com.github.hmld.framework.system.log.util;
  *
  */
 public interface ILogObserver {
+	/**
+	 * 更新观察内容
+	 * @param logmsg
+	 */
 	public void update(String logmsg);
 }

@@ -17,9 +17,9 @@ public class MainView extends Application {
   @Override
   public void start(Stage stage) throws Exception {
     FXMLLoader loader = new FXMLLoader();
-    loader.setLocation(loader.getClassLoader().getResource("view/main.fxml"));
+    loader.setLocation(loader.getClassLoader().getResource("view/logger.fxml"));
     loader.setResources(ResourceBundle.getBundle(MsageUtils.getPropertiesUrl().replaceAll(".properties", "")));
-    LoggerUtil.infoMsgI18n(getClass(), "system.log.info","加载 [view/main.fxml]");
+    LoggerUtil.infoMsgI18n(getClass(), "system.log.info","加载 [view/logger.fxml]");
     Scene scene = new Scene(loader.load());
     stage.setScene(scene);
     stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
