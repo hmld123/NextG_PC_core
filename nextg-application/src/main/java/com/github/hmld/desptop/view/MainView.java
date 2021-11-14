@@ -2,12 +2,8 @@ package com.github.hmld.desptop.view;
 
 import java.util.ResourceBundle;
 
-import org.apache.ibatis.session.SqlSession;
-
 import com.github.hmld.common.utils.LoggerUtil;
 import com.github.hmld.common.utils.MsageUtils;
-import com.github.hmld.common.utils.SqliteJDBCUtil;
-import com.github.hmld.desptop.common.utils.LoginPool;
 
 import javafx.application.Application;
 import javafx.event.EventHandler;
@@ -21,21 +17,17 @@ public class MainView extends Application {
   @Override
   public void start(Stage stage) throws Exception {
     FXMLLoader loader = new FXMLLoader();
-    loader.setLocation(loader.getClassLoader().getResource("view/login.fxml"));
+    loader.setLocation(loader.getClassLoader().getResource("view/main.fxml"));
     loader.setResources(ResourceBundle.getBundle(MsageUtils.getPropertiesUrl().replaceAll(".properties", "")));
-    LoggerUtil.infoMsgI18n(getClass(), "system.log.info","加载 [view/login.fxml]");
+    LoggerUtil.infoMsgI18n(getClass(), "system.log.info","加载 [view/main.fxml]");
     Scene scene = new Scene(loader.load());
     stage.setScene(scene);
     stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
 			@Override
 			public void handle(WindowEvent event) {
-				SqlSession session = SqliteJDBCUtil.getCurrentSqlSession();
-				session.close();
-				LoginPool.loginOut();
 				LoggerUtil.infoMsgI18n(getClass(),"system.log.info", "Session is close!");
 			}
 		});
     stage.show();
   }
-
 }

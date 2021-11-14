@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.hmld.framework.system.log.LoggerContoller">
+   <children>
+      <Label layoutX="15.0" layoutY="7.0" text="Log Console" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="7.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="loggerView" disable="fase" layoutX="15.0" layoutY="32.0" prefHeight="333.0" prefWidth="570.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="32.0" />
+      <Button fx:id="dolog" layoutX="512.0" layoutY="5.0" mnemonicParsing="false" onAction="#dologAction" text="Button" />
+   </children>
+</AnchorPane>

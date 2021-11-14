@@ -20,6 +20,8 @@
 		<maven.compiler.target>11</maven.compiler.target>
 		<!-- javafx版本 -->
 		<javafxVersion>11</javafxVersion>
+		<!-- materialfx版本 -->
+		<materialfxVersion>11.12.0</materialfxVersion>
 		<!-- jackson版本 -->
 		<jacksonVersion>2.12.4</jacksonVersion>
 		<!-- commons-lang3版本 -->
@@ -28,8 +30,8 @@
 		<commonsIoVersion>2.11.0</commonsIoVersion>
 		<!-- commons-codec 版本 -->
 		<commonsCodecVersion>1.15</commonsCodecVersion>
-		<!-- log4j 版本 -->
-		<log4jVersion>2.14.1</log4jVersion>
+		<!-- logback 版本 -->
+		<logbackVersion>1.2.6</logbackVersion>
 		<!-- mybatis 版本 -->
 		<mybatisVersion>3.5.7</mybatisVersion>
 		<!-- sqlite-jdbc 版本 -->

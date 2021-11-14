@@ -1,13 +1,15 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.github.hmld.desptop</groupId>
-    <artifactId>NextG_PC_core</artifactId>
-    <version>${project.version}</version>
-  </parent>
-  <artifactId>nextg-common</artifactId>
-  
-  <dependencies>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.github.hmld.desptop</groupId>
+		<artifactId>NextG_PC_core</artifactId>
+		<version>${project.version}</version>
+	</parent>
+	<artifactId>nextg-common</artifactId>
+
+	<dependencies>
 		<!-- javafx-controls -->
 		<dependency>
 			<groupId>org.openjfx</groupId>
@@ -32,6 +34,12 @@
 			<artifactId>javafx-web</artifactId>
 			<version>${javafxVersion}</version>
 		</dependency>
+		<!-- materialfx 
+		<dependency>
+			<groupId>io.github.palexdev</groupId>
+			<artifactId>materialfx</artifactId>
+			<version>${materialfxVersion}</version>
+		</dependency> -->
 		<!-- jackson-core -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
@@ -68,17 +76,16 @@
 			<artifactId>commons-codec</artifactId>
 			<version>${commonsCodecVersion}</version>
 		</dependency>
-		<!-- log4j-core -->
+		<!-- logback -->
 		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-core</artifactId>
-			<version>${log4jVersion}</version>
+		    <groupId>ch.qos.logback</groupId>
+		    <artifactId>logback-core</artifactId>
+		    <version>${logbackVersion}</version>
 		</dependency>
-		<!-- log4j-api -->
 		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-api</artifactId>
-			<version>${log4jVersion}</version>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logbackVersion}</version>
 		</dependency>
 		<!-- mybatis -->
 		<dependency>
